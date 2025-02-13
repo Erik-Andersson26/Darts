@@ -7,30 +7,29 @@
   <p>Legs Won: {{ legs_won }}</p>
   <p>Legs Lost: {{ legs_lost }}</p>
   <p>Matches Played: {{ matches_played }}</p>
-
-  <h3>Match History</h3>
-  {{#if matches}}
-    <table>
-      <thead>
-        <tr>
-          <th>Opponent</th>
-          <th>Result</th>
-          <th>Date</th>
-        </tr>
-      </thead>
-      <tbody>
-        {{#each matches}}
-          <tr>
-            <td>{{ opponent }}</td>
-            <td>{{ result }}</td>
-            <td>{{ date }}</td>
-          </tr>
-        {{/each}}
-      </tbody>
-    </table>
-  {{else}}
-    <p>No match history available.</p>
-  {{/if}}
-
   <a href="/players">Back to players list</a>
 {{/player}}
+
+<h3>Match History</h3>
+{{#if matches}}
+  <table>
+    <thead>
+      <tr>
+        <th>Opponent</th>
+        <th>Result</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each matches}}
+        <tr>
+          <td>{{ opponent }}</td>
+          <td>{{ result }}</td>
+          <td>{{ date }}</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+{{else}}
+  <p>No match history available.</p>
+{{/if}}

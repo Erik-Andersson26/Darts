@@ -49,12 +49,44 @@ app.get('/players', (req, res) => {
 // Single Player Route
 app.get('/players/:player_id', (req, res) => {
   const playerId = req.params.player_id;
+
+  // Hämta spelarinformation
   db.get('SELECT * FROM players WHERE player_id = ?', [playerId], (err, player) => {
     if (err) return res.status(500).send('Database error');
     if (!player) return res.status(404).send('Player not found');
-    res.render('single-player', { player });
+
+    // Hämta matchhistorik (inklusive motståndarens namn)
+    db.all(`
+      SELECT 
+        p1.first_name || ' ' || p1.last_name AS player1_name,
+        p2.first_name || ' ' || p2.last_name AS player2_name,
+        m.player1_legs, 
+        m.player2_legs, 
+        m.date 
+      FROM match m
+      JOIN players p1 ON m.player1_id = p1.player_id
+      JOIN players p2 ON m.player2_id = p2.player_id
+      WHERE m.player1_id = ? OR m.player2_id = ?
+      ORDER BY date DESC
+    `, [playerId, playerId], (err, matches) => {
+      if (err) return res.status(500).send('Database error');
+
+      // Omvandla data så att det blir enklare att visa rätt motståndare
+      const matchHistory = matches.map(match => ({
+        opponent: match.player1_name === `${player.first_name} ${player.last_name}`
+          ? match.player2_name
+          : match.player1_name,
+        result: match.player1_name === `${player.first_name} ${player.last_name}`
+          ? `${match.player1_legs}-${match.player2_legs}`
+          : `${match.player2_legs}-${match.player1_legs}`,
+        date: match.date
+      }));
+
+      res.render('single-player', { player, matches: matchHistory });
+    });
   });
 });
+
 
 // Register Match Route
 app.get('/register/match', (req, res) => {
@@ -90,9 +122,9 @@ app.post('/match/add', (req, res) => {
   );
 
   if (player1_legs > player2_legs) {
-    db.run('UPDATE players SET points = points + 3 WHERE player_id = ?', [player1_id]);
+    db.run('UPDATE players SET points = points + 1 WHERE player_id = ?', [player1_id]);
   } else if (player2_legs > player1_legs) {
-    db.run('UPDATE players SET points = points + 3 WHERE player_id = ?', [player2_id]);
+    db.run('UPDATE players SET points = points + 1 WHERE player_id = ?', [player2_id]);
   }
 
   res.redirect('/players');

@@ -9,7 +9,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #fff5e6; /* Light orange background */
+  background-color: #00550060; /* Light orange background */
   text-align: center;
   min-height: 100vh;
 }
@@ -38,7 +38,7 @@ ul.header {
   margin: 0;
   padding: 0;
   width: 100%;
-  background-color: #ff8c00; /* Orange */
+  background-color: #5865f2; /* Orange */
 }
 
 li {
@@ -54,14 +54,14 @@ li a {
 }
 
 li a:hover {
-  background-color: #cc7000; /* Darker Orange */
+  background-color: #005500a6; /* Darker Orange */
 }
 
 /* FOOTER */
 .footer {
   text-align: center;
   padding: 12px 30px;
-  background-color: #ff7300; /* Dark Orange */
+  background-color: #005500a6; /* Dark Orange */
   color: whitesmoke;
   font-size: 10pt;
   width: 100%;
@@ -84,7 +84,7 @@ li a:hover {
   width: 250px;
   text-align: center;
   padding: 20px;
-  background-color: #ffcc80; /* Light Orange */
+  background-color: #005500a6; /* Light Orange */
   transition: all 0.3s ease-in-out;
 }
 
@@ -95,13 +95,13 @@ li a:hover {
 
 .player_card .number {
   font-size: 20px;
-  color: #cc7000; /* Dark Orange */
+  color: #6d0c05; /* Dark Orange */
   font-weight: bold;
 }
 
 .player_card .name {
   font-size: 20px;
-  color: #e65100; /* Deeper Orange */
+  color: #6d0c05; /* Deeper Orange */
   font-weight: bold;
 }
 
@@ -119,7 +119,7 @@ li a:hover {
 /* BUTTONS */
 .editButton {
   border-radius: 5px;
-  background-color: #ffa726; /* Orange */
+  background-color: #06a800; /* Orange */
   padding: 10px;
   margin: 10px;
   transition: background 0.3s ease-in-out;
@@ -127,7 +127,7 @@ li a:hover {
 }
 
 .editButton:hover {
-  background-color: #e65100; /* Darker Orange */
+  background-color: #005500a6; /* Darker Orange */
 }
 
 .editButton a {
@@ -137,8 +137,8 @@ li a:hover {
 
 /* FORM INPUTS */
 input[type="submit"] {
-  background-color: #ff5722; /* Deep Orange */
-  color: white;
+  background-color: #005500a6; /* Deep Orange */
+  color: rgb(212, 0, 255);
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -149,7 +149,7 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-  background-color: #e64a19; /* Darker Deep Orange */
+  background-color: #005500a6; /* Darker Deep Orange */
 }
 
 /* EDIT FORMS */
@@ -190,7 +190,7 @@ input[type="submit"]:hover {
 }
 
 .deletebutton input[type="submit"]:hover {
-  background-color: darkred;
+  background-color: 005500a6;
 }
 
 /* TABLE (For Player Standings) */
@@ -198,11 +198,11 @@ table {
   width: 80%;
   margin: 20px auto;
   border-collapse: collapse;
-  background-color: #fffaf0; /* Light beige-orange */
+  background-color: #005500a6; /* Light beige-orange */
 }
 
 table, th, td {
-  border: 1px solid #ff8c00; /* Orange border */
+  border: 1px solid #000000a6; /* Orange border */
 }
 
 th, td {
@@ -211,6 +211,23 @@ th, td {
 }
 
 th {
-  background-color: #ff7300; /* Dark orange */
-  color: white;
+  background-color: #9c0000; /* Dark orange */
+  color: rgb(0, 0, 0);
+}
+
+/* Stil för start-diven */
+.start {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+}
+
+/* Stil för bilden */
+.start img {
+  max-width: 20%;
+  max-height: 90vh;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }

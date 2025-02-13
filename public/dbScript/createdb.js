@@ -8,7 +8,11 @@ db.serialize(() => {
   db.run('CREATE TABLE IF NOT EXISTS match(match_id INTEGER PRIMARY KEY, player1_id INTEGER, player2_id INTEGER, player1_legs INTEGER, player2_legs INTEGER, date TEXT, FOREIGN KEY (player1_id) REFERENCES players(player_id), FOREIGN KEY (player2_id) REFERENCES players(player_id))');
 
   // Insert sample players
-  db.run('INSERT INTO players (first_name, last_name, walk_out_song, dart_brand, points, legs_won, legs_lost, matches_played) VALUES (?, ?, ?, ?, ?, ?, ?, ?)', ["John", "Doe", "Eye of the Tiger", "Unicorn", 0, 0, 0, 0]);
-  db.run('INSERT INTO players (first_name, last_name, walk_out_song, dart_brand, points, legs_won, legs_lost, matches_played) VALUES (?, ?, ?, ?, ?, ?, ?, ?)', ["Jane", "Smith", "Thunderstruck", "Target", 0, 0, 0, 0]);
-  db.run('INSERT INTO players (first_name, last_name, walk_out_song, dart_brand, points, legs_won, legs_lost, matches_played) VALUES (?, ?, ?, ?, ?, ?, ?, ?)', ["Mike", "Brown", "We Will Rock You", "Winmau", 0, 0, 0, 0]);
+  db.run('INSERT INTO players (first_name, last_name, walk_out_song, dart_brand, points, legs_won, legs_lost, matches_played) VALUES (?, ?, ?, ?, ?, ?, ?, ?)', ["Erik", "Andersson", "Ring Of Fire", "Target", 0, 0, 0, 0]);
+  db.run('INSERT INTO players (first_name, last_name, walk_out_song, dart_brand, points, legs_won, legs_lost, matches_played) VALUES (?, ?, ?, ?, ?, ?, ?, ?)', ["Kasper", "Ljungström", "La Bamba", "Winmau", 0, 0, 0, 0]);
+  db.run('INSERT INTO players (first_name, last_name, walk_out_song, dart_brand, points, legs_won, legs_lost, matches_played) VALUES (?, ?, ?, ?, ?, ?, ?, ?)', ["Teodor", "Hellstrand", "Sex On Fire", "Red Dragon", 0, 0, 0, 0]);
+  db.run('INSERT INTO players (first_name, last_name, walk_out_song, dart_brand, points, legs_won, legs_lost, matches_played) VALUES (?, ?, ?, ?, ?, ?, ?, ?)', ["Oskar", "Axell", " ", " ", 0, 0, 0, 0]);
+  db.run('INSERT INTO players (first_name, last_name, walk_out_song, dart_brand, points, legs_won, legs_lost, matches_played) VALUES (?, ?, ?, ?, ?, ?, ?, ?)', ["David", "Bergsten", " ", " ", 0, 0, 0, 0]);
+  db.run('INSERT INTO players (first_name, last_name, walk_out_song, dart_brand, points, legs_won, legs_lost, matches_played) VALUES (?, ?, ?, ?, ?, ?, ?, ?)', ["David", "Ekblad", " ", " ", 0, 0, 0, 0]);
+  db.run('INSERT INTO players (first_name, last_name, walk_out_song, dart_brand, points, legs_won, legs_lost, matches_played) VALUES (?, ?, ?, ?, ?, ?, ?, ?)', ["Alfred", "Berger", " ", " ", 0, 0, 0, 0]);
 });
