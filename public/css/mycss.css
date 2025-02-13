@@ -1,0 +1,216 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff5e6; /* Light orange background */
+  text-align: center;
+  min-height: 100vh;
+}
+
+/* CONTAINER */
+.container {
+  min-height: 600px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* HEADER */
+.header {
+  text-align: center;
+  width: 100%;
+}
+
+/* NAVBAR */
+ul.header {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: #ff8c00; /* Orange */
+}
+
+li {
+  margin: 0 50px;
+}
+
+li a {
+  display: block;
+  color: white;
+  padding: 16px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+li a:hover {
+  background-color: #cc7000; /* Darker Orange */
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 12px 30px;
+  background-color: #ff7300; /* Dark Orange */
+  color: whitesmoke;
+  font-size: 10pt;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+
+/* PLAYER CARDS */
+.player_container {
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.player_card {
+  border-radius: 10px;
+  width: 250px;
+  text-align: center;
+  padding: 20px;
+  background-color: #ffcc80; /* Light Orange */
+  transition: all 0.3s ease-in-out;
+}
+
+.player_card:hover {
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+}
+
+.player_card .number {
+  font-size: 20px;
+  color: #cc7000; /* Dark Orange */
+  font-weight: bold;
+}
+
+.player_card .name {
+  font-size: 20px;
+  color: #e65100; /* Deeper Orange */
+  font-weight: bold;
+}
+
+.player_card .position {
+  padding-top: 10px;
+  font-size: 14px;
+  color: dimgray;
+  font-style: italic;
+}
+
+.player_card a {
+  color: black;
+}
+
+/* BUTTONS */
+.editButton {
+  border-radius: 5px;
+  background-color: #ffa726; /* Orange */
+  padding: 10px;
+  margin: 10px;
+  transition: background 0.3s ease-in-out;
+  display: inline-block;
+}
+
+.editButton:hover {
+  background-color: #e65100; /* Darker Orange */
+}
+
+.editButton a {
+  color: white;
+  font-weight: bold;
+}
+
+/* FORM INPUTS */
+input[type="submit"] {
+  background-color: #ff5722; /* Deep Orange */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+}
+
+input[type="submit"]:hover {
+  background-color: #e64a19; /* Darker Deep Orange */
+}
+
+/* EDIT FORMS */
+.editstats, .editplayers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  text-align: center;
+  padding: 20px;
+  background-color: #fff3e0; /* Light orange background */
+  border-radius: 10px;
+}
+
+.editpage {
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* DELETE BUTTON */
+.deletebutton {
+  text-align: center;
+}
+
+.deletebutton input[type="submit"] {
+  background-color: red;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.deletebutton input[type="submit"]:hover {
+  background-color: darkred;
+}
+
+/* TABLE (For Player Standings) */
+table {
+  width: 80%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  background-color: #fffaf0; /* Light beige-orange */
+}
+
+table, th, td {
+  border: 1px solid #ff8c00; /* Orange border */
+}
+
+th, td {
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background-color: #ff7300; /* Dark orange */
+  color: white;
+}

@@ -1,0 +1,27 @@
+
+  <table>
+    <thead>
+      <tr>
+        <th>Rank</th>
+        <th>Player</th>
+        <th>Points</th>
+        <th>Legs Won</th>
+        <th>Legs Lost</th>
+        <th>Matches Played</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each players}}
+      <tr>
+        <td>{{addOne @index}}</td>
+        <td>{{first_name}} {{last_name}}</td>
+        <td>{{points}}</td>
+        <td>{{legs_won}}</td>
+        <td>{{legs_lost}}</td>
+        <td>{{matches_played}}</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+
+  <div class="editButton"><a href="/register/match">Add Match</a></div>

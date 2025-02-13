@@ -1,0 +1,27 @@
+<form action="/match/add" method="POST">
+    <div class="editmatches">
+        <label for="player1">Player 1:</label>
+        <select id="player1" name="player1_id" required>
+            <option value="" disabled selected>Select Player 1</option>
+            {{#each players}}
+            <option value="{{player_id}}">{{first_name}} {{last_name}}</option>
+            {{/each}}
+        </select>
+
+        <label for="player2">Player 2:</label>
+        <select id="player2" name="player2_id" required>
+            <option value="" disabled selected>Select Player 2</option>
+            {{#each players}}
+            <option value="{{player_id}}">{{first_name}} {{last_name}}</option>
+            {{/each}}
+        </select>
+
+        <label for="result">Match Result:</label>
+        <input type="text" id="result" name="result" placeholder="Enter result (e.g., 3-1)" required>
+
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required>
+        
+        <input type="submit" value="Save Match">
+    </div>
+</form>

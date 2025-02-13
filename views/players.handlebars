@@ -1,0 +1,14 @@
+<h1>{{title}}</h1>
+<div class="player_container">
+    {{#each players}}
+    <div class="player_card">
+        <img src="/img/default-player.jpg" alt="{{first_name}} {{last_name}}">
+        <h3><a href="/players/{{player_id}}">{{first_name}} {{last_name}}</a></h3>
+        <p>Dart Brand: {{dart_brand}}</p>
+        <p>Points: {{points}}</p>
+        <p>Legs Won: {{legs_won}}</p>
+        <p>Legs Lost: {{legs_lost}}</p>
+        <p>Matches Played: {{matches_played}}</p>
+    </div>
+    {{/each}}
+</div>
