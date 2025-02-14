@@ -1,55 +1,36 @@
-  <table>
+<table>
     <thead>
-      <tr>
-        <th>Rank</th>
-        <th>Player</th>
-        <th>Matches Won</th>
-        <th>Legs Won</th>
-        <th>Legs Lost</th>
-        <th>Matches Played</th>
-      </tr>
+        <tr>
+            <th>Rank</th>
+            <th>Player</th>
+            <th>Matches Won</th>
+            <th>Legs Won</th>
+            <th>Legs Lost</th>
+            <th>Legs +/-</th>
+            <th>Matches Played</th>
+            <th>Points</th>
+        </tr>
     </thead>
     <tbody>
-      {{#each players}}
-      <tr>
-        <td>{{addOne @index}}</td>
-        <td>{{first_name}} {{last_name}}</td>
-        <td>{{points}}</td>
-        <td>{{legs_won}}</td>
-        <td>{{legs_lost}}</td>
-        <td>{{matches_played}}</td>
-      </tr>
-      {{/each}}
+        {{#each players}}
+        <tr>
+            <td>{{addOne @index}}</td>
+            <td>{{first_name}} {{last_name}}</td>
+            <td>{{matches_won}}</td>
+            <td>{{legs_won}}</td>
+            <td>{{legs_lost}}</td>
+            <td>{{leg_plus}}</td>
+            <td>{{matches_played}}</td>
+            <td>{{points}}</td>
+        </tr>
+        {{/each}}
     </tbody>
-  </table>
+</table>
+
+
 
   <div class="editButton"><a href="/register/match">Add Match</a></div>
 
-  <!DOCTYPE html>
-<html lang="sv">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spelschema</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-        }
-        th, td {
-            border: 1px solid black;
-            padding: 8px;
-            text-align: left;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-    </style>
-</head>
 <body>
     <h1>Spelschema</h1>
     <table>
@@ -58,10 +39,10 @@
             <th>Matcher</th>
             <th>Spelare som står över</th>
         </tr>
-        <tr><td>GW1</td><td>Libbe vs Blau 2–3<br>Dave vs Kappe 0–3<br>Torre vs Affe 3–0</td><td>Snabben</td></tr>
-        <tr><td>GW2</td><td>Torre vs Libbe 3–2<br>Blau vs Dave 1-3<br>Kappe vs Snabben 1–3</td><td>Affe</td></tr>
-        <tr><td>GW3</td><td>Blau vs Torre 3-1<br>Snabben vs Affe 3-0<br>Kappe vs Libbe 3–1</td><td>Dave</td></tr>
-        <tr><td>GW4</td><td>Blau vs Affe 0-3<br>Torre vs Kappe 3-1<br>Dave vs Snabben 3-1</td><td>Libbe</td></tr>
+        <tr><td>GW1</td><td>Libbe vs Blau<br>Dave vs Kappe<br>Torre vs Affe</td><td>Snabben</td></tr>
+        <tr><td>GW2</td><td>Torre vs Libbe<br>Blau vs Dave<br>Kappe vs Snabben</td><td>Affe</td></tr>
+        <tr><td>GW3</td><td>Blau vs Torre<br>Snabben vs Affe<br>Kappe vs Libbe</td><td>Dave</td></tr>
+        <tr><td>GW4</td><td>Blau vs Affe<br>Torre vs Kappe<br>Dave vs Snabben</td><td>Libbe</td></tr>
         <tr><td>GW5</td><td>Torre vs Dave<br>Blau vs Snabben<br>Affe vs Libbe</td><td>Kappe</td></tr>
         <tr><td>GW6</td><td>Libbe vs Snabben<br>Kappe vs Blau<br>Dave vs Affe</td><td>Torre</td></tr>
         <tr><td>GW7</td><td>Snabben vs Torre<br>Libbe vs Dave<br>Affe vs Kappe</td><td>Blau</td></tr>

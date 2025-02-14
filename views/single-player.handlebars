@@ -1,14 +1,18 @@
-{{#player}} 
-  <div class="picture"><img src="{{ picture }}" alt="{{ first_name }} {{ last_name }}"></div>
-  <p>Name: {{ first_name }} {{ last_name }}</p>
-  <p>Walk Out Song: {{ walk_out_song }}</p>
-  <p>Dart Brand: {{ dart_brand }}</p>
-  <p>Points: {{ points }}</p>
-  <p>Legs Won: {{ legs_won }}</p>
-  <p>Legs Lost: {{ legs_lost }}</p>
-  <p>Matches Played: {{ matches_played }}</p>
+<h3>Player Information</h3>
+{{#if player}}
+  <div class="picture"><img src="/img/default-player.jpg" alt="{{ player.first_name }} {{ player.last_name }}"></div>
+  <p><strong>Name:</strong> {{ player.first_name }} {{ player.last_name }}</p>
+  <p><strong>Walk Out Song:</strong> {{ player.walk_out_song }}</p>
+  <p><strong>Dart Brand:</strong> {{ player.dart_brand }}</p>
+  <p><strong>Points:</strong> {{ player.points }}</p>
+  <p><strong>Legs Won:</strong> {{ player.legs_won }}</p>
+  <p><strong>Legs Lost:</strong> {{ player.legs_lost }}</p>
+  <p><strong>Leg+/-:</strong> {{ player.leg_plus }}</p>
+  <p><strong>Matches Played:</strong> {{ player.matches_played }}</p>
   <a href="/players">Back to players list</a>
-{{/player}}
+{{else}}
+  <p>Player not found.</p>
+{{/if}}
 
 <h3>Match History</h3>
 {{#if matches}}
